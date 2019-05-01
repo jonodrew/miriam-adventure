@@ -5,10 +5,10 @@ class Character(object):
     def __init__(self, name='bob'):
         self.first_name = name
 
-    def attack(self, target):
+    def attack(self, target: 'Character'):
         pass
 
-    def special(self, target=None):
+    def special(self, target: 'Character' = None):
         pass
 
 
