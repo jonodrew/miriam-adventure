@@ -2,6 +2,8 @@
 
 ## HELP!
 
+#[Stage 1](https://github.com/jonodrew/miriam-adventure/tree/v0.1.0)
+
 I've started writing an adventure game but I'm stuck and need your help. I've written some tests but I still need to
 write code to make them pass - and other tests I've not even finished!
 
