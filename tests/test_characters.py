@@ -1,4 +1,4 @@
-from models import *
+from characters.characters import *
 import pytest
 
 
@@ -17,7 +17,6 @@ def test_inherits_name():
     (Alien(), "The alien aggressively reads poetry at bob!"),
     (Wizard(), "The wizard drops a heavy book on bob's foot!"),
     (Coder(), "The coder tells bob a dad joke. It's super effective!"),
-    (Healer(), "The healer makes bob feel bad for not going to the doctor more frequently")
 ])
 def test_attack(character, outcome):
     bob = Character('bob')
@@ -48,12 +47,12 @@ class TestCoder:
     reverse of their originator - for example, 'Lucy' would become 'Ycul'. Coders cannot clone Coders!
     """
     def test_coder_special_clones_party_member(self):
-        """
-        This test needs to be written!
-        :return:
-        :rtype:
-        """
-        assert False
+        anya_the_wizard = Wizard('Anya')
+        cleo_the_coder = Coder('Cleo')
+        party = Party([anya_the_wizard, cleo_the_coder])
+        cleo_the_coder.special(anya_the_wizard)
+        assert len(party.party_members) == 3
+        assert 'Ayna' in [member.first_name for member in party.party_members]
 
     def test_coder_cannot_clone_coder(self):
         anish_the_coder = Coder('Anish')
